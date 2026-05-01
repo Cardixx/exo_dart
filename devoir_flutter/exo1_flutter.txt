@@ -1,0 +1,86 @@
+EXERCICE 1.1 : Centrer un TextField
+Méthode 1 : Avec Center
+Center(
+  child: Container(
+    width: 250,
+    child: TextField(),
+  ),
+)
+--Simple et direct
+--Centre horizontal + vertical
+
+Méthode 2 : Avec Column + MainAxisAlignment.center
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    TextField(),
+  ],
+)
+--Utile si on a plusieurs widgets
+--Plus flexible qu’un Center
+
+
+
+
+
+EXERCICE 1.2 : Compteur de caractères
+Méthode 1 : maxLength
+TextField(
+  maxLength: 20,
+)
+
+--Flutter affiche automatiquement le compteur
+
+Méthode 2 : counterText personnalisé
+TextField(
+  decoration: InputDecoration(
+    counterText: "0/20",
+  ),
+)
+
+--Pour personnaliser l’affichage
+--Souvent combiné avec un TextEditingController
+
+
+
+
+
+EXERCICE 1.3 : Addition avec TextField
+Étape 1 : Créer les contrôleurs
+TextEditingController c1 = TextEditingController();
+TextEditingController c2 = TextEditingController();
+Étape 2 : TextField
+TextField(controller: c1),
+TextField(controller: c2),
+Étape 3 : Conversion + addition
+int n1 = int.parse(c1.text);
+int n2 = int.parse(c2.text);
+int somme = n1 + n2;
+
+--Exemple complet
+ElevatedButton(
+  onPressed: () {
+    int n1 = int.parse(c1.text);
+    int n2 = int.parse(c2.text);
+    print("Somme = ${n1 + n2}");
+  },
+  child: Text("Calculer"),
+)
+
+
+
+
+
+
+EXERCICE 1.4 : Décoration TextField
+TextField(
+  decoration: InputDecoration(
+    labelText: "Nom",
+    hintText: "Entrez votre nom",
+    border: OutlineInputBorder(),
+    prefixIcon: Icon(Icons.person),
+  ),
+)
+
+--Améliore UI/UX
+--Ajoute icônes, bordures, texte d’aide

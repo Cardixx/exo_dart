@@ -1,0 +1,20 @@
+EXERCICE 3 : Plusieurs TextField dans un Container
+Container(
+  padding: EdgeInsets.all(20),
+  child: Column(
+    children: [
+      TextField(
+        decoration: InputDecoration(labelText: "Nom"),
+      ),
+      TextField(
+        decoration: InputDecoration(labelText: "Email"),
+      ),
+      TextField(
+        decoration: InputDecoration(labelText: "Mot de passe"),
+      ),
+    ],
+  ),
+)
+
+--Column permet d’empiler plusieurs champs
+--Container pour styliser (padding, couleur…)
